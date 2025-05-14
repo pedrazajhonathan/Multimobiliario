@@ -84,24 +84,24 @@
             text-transform: capitalize;
 
         }
-        .recomendaciones{
+        section{
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-items: center;
-            gap: 0px;
-            position: relative;
-            bottom: 70px;
             width: 100%;
-            margin-bottom: 150px;
         }
-        .recomendaciones p{
+        .recomendaciones{
+            position: relative;
+            width: 400px;
+            height: 300px;
+            bottom: 70px;
+        }
+        .recomendaciones>p{
+            text-align: center;
             color: rgb(45, 96, 238);
             font-weight: 600;
             font-size: 1em;
             text-transform: capitalize;
-           
-
         }
        
        
@@ -130,7 +130,7 @@
         }
         .titulo{
             text-align: center;
-            font-size: 4em;
+            font-size: 3em;
             font-weight: 900;
             color: blue;
             position: relative;
@@ -161,7 +161,7 @@
         }
         .silla p{
             color: blue;
-            font-size: 2em;
+            font-size: 1.2em;
             font-weight: 800;
             position: relative;
             bottom: 0px;
@@ -170,7 +170,7 @@
             height: 210px;
         }
         .enlace{
-            width: 100%;
+            width: 190px;
             height: 11%;
             background-color: blue;
             border-bottom-left-radius: 10px;
@@ -179,6 +179,8 @@
             justify-content: center;
             align-items: center;
             transition: all .3s linear;
+            position: relative;
+            top: 20px;
         }
         .enlace:hover{
             transform: scale(1.1);
@@ -186,7 +188,8 @@
         .enlace a{
             color: #fff;
             font-weight: 600;
-            padding: 10px 100px;
+            padding: 10px 50px;
+            font-size: 1.2em;
         }
         .escritorio{
             display: flex;
@@ -245,7 +248,7 @@
         .enlace1 a{
             color: #fff;
             font-weight: 600;
-            padding: 10px 100px;
+            padding: 10px 50px;
             font-size: 1.2em;
         }
         .footer{
@@ -277,14 +280,7 @@
                 justify-content: center;
                 gap: 2px;
             }
-            .recomendaciones p:last-child{
-                position: relative;
-                bottom: 50px;
-            }
-            .recomendaciones p:nth-child(2){
-                position: relative;
-                bottom: 20px;
-            }
+           
             .recomendaciones p{
                 font-size: 17px;
                 text-align: center;
