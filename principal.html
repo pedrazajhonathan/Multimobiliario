@@ -10,42 +10,53 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #fff;
-            overflow-x: hidden;
         }
         .padre{
             width: 100%;
             height: 100%;
-            
-            
         }
       
         .padre .imagen{
             width: 600px;
-            height: 480px;
+            height: 490px;
             float: right;
             position: relative;
-            bottom: 120px;
+            top: 0;
+            right: 0;
             mask-image: linear-gradient(90deg , transparent 0%, black 100%);
-           
+            margin-bottom: 100px;
         }
+    
         .relleno{
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             background: linear-gradient(90deg, blue 0% , transparent 100%);
+            animation: movi 4s linear infinite;
+            background-size: 150% 100%;
+
+        }
+        @keyframes movi{
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
         }
         .padre img:not(.imagen){
             width: 30px;
             border-radius: 10px;
         }
         .texto{
-            position: relative;
+            position: absolute;
             z-index: 1;
             left: 4vw;
             bottom: 80px;
-            
-
         }
         .texto p:nth-child(1){
             font-size: 7em;
@@ -72,38 +83,48 @@
             text-transform: capitalize;
         }
         .link{
-            position: relative;
+            position: absolute;
             z-index: 1;
-            bottom: 120px;
+            top: 70vh;
             left: 30px;
             display: flex;
             align-items: center;
             gap: 5px;
-
         }
         .link a{
             color: #fff;
             text-transform: capitalize;
-
-        }
-        section{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
         }
         .recomendaciones{
             position: relative;
-            width: 400px;
-            height: 300px;
-            bottom: 70px;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 80px;
         }
         .recomendaciones>p{
-            text-align: center;
-            color: rgb(45, 96, 238);
+            color: rgb(32, 7, 255);
             font-weight: 600;
             font-size: 1em;
             text-transform: capitalize;
+            position: relative;
+            text-align: center;
+            animation: colo linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+        @keyframes colo{
+            from{
+                color: transparent;
+                scale: .6;
+            }
+            to{
+                color: blue;
+                scale: 1;
+            }
         }
        
        
@@ -113,10 +134,8 @@
             align-items: center;
             flex-wrap: wrap;
             position: relative;
-            bottom: 200px;
             width: 100%;
             gap: 60px;
-
         }
         .sillas div:nth-child(1){
             animation-delay: .3s;
@@ -136,8 +155,10 @@
             font-weight: 900;
             color: blue;
             position: relative;
-            bottom: 210px;
             text-transform: capitalize;
+            animation:  colo linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
         }
         .silla{
             width: 220px;
@@ -148,15 +169,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            animation:  flotar 2s linear infinite alternate;
+            animation: mover linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
             transition: all .3s linear;
         }
-        
-        @keyframes flotar{
+        @keyframes mover{
+            from{
+                opacity: .3;
+                transform: scale(.7);
+            }
             to{
-                transform: translateY(10px);
+                opacity: 1;
+                transform: scale(1);
             }
         }
+       
         .silla img{
             width: 210px;
             height: 250px;
@@ -172,7 +200,7 @@
             height: 210px;
         }
         .enlace{
-            width: 220px;
+            width: 100%;
             height: 11%;
             background-color: blue;
             border-bottom-left-radius: 10px;
@@ -201,12 +229,13 @@
             width: 100%;
             gap: 50px;
             position: relative;
-            bottom: 200px;
         }
         .escritorios{
             width: 300px;
             height: 400px;
-            animation:  flotar 2s linear infinite alternate;
+            animation: mover linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
             border-radius: 10px;
             box-shadow: 0 0 10px black;
         }
@@ -259,15 +288,17 @@
             justify-content: center;
             width: 100%;
             gap: 30px;
-            
+            position: relative;
         }
         footer{
             width: 100%;
-      
+            position: relative;
             background-color: blue;
             display: flex;
             align-items: end;
+            margin-top: 100px;
         }
+       
         .footer h2{
             font-size: 1.1em;
             font-weight: 700;
@@ -284,33 +315,26 @@
             }
            
             .recomendaciones p{
-                font-size: 17px;
+                font-size: 15px;
                 text-align: center;
-                
+            }
+            section{
+                position: relative;
+                top: 50vh;
             }
             .sillas {
-                gap: 80px;
-
+                gap: 80px; 
             }
             
             .padre .imagen{
                 width: 60%;
+                height: 100%;
                 position: absolute;
                 bottom: 0;
                 right: 0;
                 float: right;
             }
-            .link{
-                bottom: 200px;
-            }
-            section{
-                position: relative;
-                top: 200px;
-            }
-            footer{
-                position: relative;
-                top: 200px;
-            }
+            
             .texto{
                 width: 100%;
                 left: -5vw;
@@ -319,11 +343,26 @@
             .texto p{
                 text-align: center;
             }
-           
+            .recomendaciones{
+                margin-bottom: 100px;
+                align-items: center;
+            }
+            footer{
+                position: relative;
+                top: 50vh;
+                margin-top: 100px;
+            }
         }
         @media (min-width:1100px){
             .padre .imagen{
                 height: 700px;
+            }
+            .texto{
+                top: -10px;
+            }
+            .recomendaciones p{
+                font-size: 15px;
+                text-align: center;
             }
             section{
                 position: relative;
@@ -333,6 +372,7 @@
                 position: relative;
                 top: 20vh;
             }
+        
         }
         .enlace3{
             display: flex;
@@ -340,6 +380,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
+            position: relative;
         }
         .enlace3 img{
             width: 30px;
@@ -354,13 +395,13 @@
 <body>
     <header>
         <div class="padre">
-            <img class="imagen" src="astess/recursos/escritorio 4.jpg" alt="silla">
-            <div class="relleno"></div>
             <div class="texto">
                 <p>multi</p>
                 <p>mobiliarios</p>
                 <p>H&M Hernández C.A</p>
             </div>
+            <img class="imagen" src="astess/recursos/escritorio 4.jpg" alt="silla">
+            <div class="relleno"></div>
             <div class="link">
                 
                 <img src="astess/recursos/logo de wachs app.jpg" alt="imagen1">
@@ -368,7 +409,7 @@
                 
             </div>
         </div>
-     
+    </header>
     <section>
         <article class="recomendaciones">
             <p>somos una empresa de mobiliarios <br> dedicada a la comercializacion</p>
@@ -379,14 +420,14 @@
         <article class="sillas">
             <div class="silla">
                 <p>presidencial</p>
-                <img src="astess/recursos/presidencial oxford.jpg" alt="imagen3">
+                <img src="astess/recursos/presidencial oxford.jpg" alt="oxford">
                 <div class="enlace">
                     <a href="presidencial.html">ver mas...</a>
                 </div>
             </div>
             <div class="silla">
                 <p>ejecutiva</p>
-                <img src="astess/recursos/trendy ejecutiva.jpg" alt="imagen3">
+                <img src="astess/recursos/trendy ejecutiva.jpg" alt="ejecutiva">
                 <div class="enlace">
                     <a href="ejecutiva.html">ver mas...</a>
                 </div>
@@ -404,28 +445,24 @@
         <article class="escritorio">
             <div class="escritorios">
                 <p>escritorio</p>
-                <img src="astess/recursos/escritorio 3.jpg" alt="imagen">
+                <img src="astess/recursos/escritorio 3.jpg" alt="escritorio">
                 <div class="enlace1">
                     <a href="escritorios.html">ver mas...</a>
                 </div>
             </div>
             <div class="escritorios">
                 <p>arturitos</p>
-                <img src="astess/recursos/archivo 1.jpg" alt="imagen">
+                <img src="astess/recursos/archivo 1.jpg" alt="archivo">
                 <div class="enlace1">
                     <a href="archiveros.html">ver mas...</a>
                 </div>
             </div>
-            <div class="enlace3">
-                <h3>contacto</h3>
-                <img src="astess/recursos/logo de wachs app.jpg" alt="logo">
-                <h3>0412-0556265</h3>
-            </div>
+          
         </article>
     </section>
     <footer>
         <div class="footer">
-            <h2>copyright:jhonathanpedraza</h2>
+            <h2>copyright:MultimobiliariosH&MHernández</h2>
             <h2>san felipe - yaracuy</h2>
             <h2>todos los derechos reservados del autor</h2>
         </div>
