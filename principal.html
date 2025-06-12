@@ -176,7 +176,7 @@
         }
         @keyframes mover{
             from{
-                opacity: .3;
+                opacity: 0;
                 transform: scale(.7);
             }
             to{
@@ -195,6 +195,7 @@
             font-weight: 800;
             position: relative;
             bottom: 0px;
+            text-transform: capitalize;
         }
         .silla img:nth-child(2){
             height: 210px;
@@ -239,12 +240,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px black;
         }
-        .escritorio div:first-child{
-            animation-delay: .3s ;
-        }
-        .escritorio div:last-child{
-            animation-delay: .6s ;
-        }
+     
         .escritorios img{
             width: 300px;
             height: 300px;
@@ -252,6 +248,96 @@
             bottom: 50px;
         }
         .escritorios p{
+            text-transform: capitalize;
+            font-size: 2em;
+            color: blue;
+            text-align: center;
+            font-weight: 800;  
+            position: relative;
+            bottom: 20px;          
+        }
+        .enlace1{
+            width: 100%;
+            height: 11%;
+            background-color: blue;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s linear;
+            position: relative;
+            bottom: 50px;
+        }
+        .enlace1:hover{
+            transform: scale(1.1);
+        }
+        .enlace1 a{
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 50px;
+            font-size: 1.2em;
+        }
+        .sillas_hogar{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 50px;
+            position: relative;
+        }
+        .hogar{
+            width: 300px;
+            height: 400px;
+            animation: mover linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+       
+        .hogar img{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            bottom: 50px;
+        }
+        .hogar p{
+            text-transform: capitalize;
+            font-size: 2em;
+            color: blue;
+            text-align: center;
+            font-weight: 800;  
+            position: relative;
+            bottom: 20px;          
+        }
+        .piramides{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 50px;
+            position: relative;
+        }
+        .piramide{
+            width: 300px;
+            height: 400px;
+            animation: mover linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+       
+        .piramide img{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            bottom: 50px;
+        }
+        .piramide p{
             text-transform: capitalize;
             font-size: 2em;
             color: blue;
@@ -305,6 +391,114 @@
             color: #fff;
             text-transform: capitalize;
         }
+        .enlace3{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
+        .enlace3 img{
+            width: 30px;
+        }
+        .enlace3 h3{
+            font-style: italic;
+            color: rgb(79, 79, 230);
+        }
+        /* haciendo el carrusel de imagenes */
+        .padreimg{
+            width: 98vw;
+            height: 70vh;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            gap: 70px;
+        }
+        .padreimg img{
+            width: 290px;
+            height: 80%;
+            border-radius: 10px;
+            animation: mover1 12s linear infinite alternate;
+            position: relative;
+            transition: all .3s linear;
+        }
+        @keyframes mover1{
+            from{
+                left:  0px;
+            }
+            to{
+                left: -1150px;
+            }
+        }
+        .padrebotom{
+            display: flex;
+            position: relative;
+            width: 400px;
+            height: 150px;
+            gap: 50px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .padrebotom button{
+            width: 120px;
+            height: 60px;
+            position: relative;
+            bottom: 0;
+            background-color: transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 1.4em;
+            color: #000000;
+            font-weight: 700;
+            border-color: transparent;
+            box-shadow:  0 0 10px black;
+            transition: all .3s linear;
+        }
+        .padreimg img:hover{
+            transform: scale(1.2);
+        }
+        .padrebotom button::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 70px;
+            background-color: blue;
+            transition: all .3s linear;
+            border-radius: 10px;
+            transform: skew(-10deg);
+            z-index: -1;
+            animation: trans 5s linear infinite;
+        }
+        @keyframes trans{
+            from{
+                left: -120px;
+            }
+            to{
+                left: 100%;
+            }
+        }
+        .padrebotom button:hover::before{
+            left: 0%;
+            width: 100%;
+            animation: none;
+            transform: skew(0deg);
+        }
+        .padrebotom button:active{
+            transform: scale(.8);
+        }
+        .carruselimg{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            align-items: center;
+            height: 90vh;
+
+        }
         /* haciendo responsis */
         @media (max-width:430px){
             .footer{
@@ -313,7 +507,10 @@
                 justify-content: center;
                 gap: 2px;
             }
-           
+            .padreimg img{
+                width: 190px;
+                height: 70%;
+            }
             .recomendaciones p{
                 font-size: 15px;
                 text-align: center;
@@ -352,6 +549,17 @@
                 top: 50vh;
                 margin-top: 100px;
             }
+            .footer h2{
+                font-size: 13px;
+            }
+            .padrebotom{
+                gap: 40px;
+                justify-content: center;
+            }
+            .padrebotom button{
+                width: 120px;
+                height: 50px;
+            }
         }
         @media (min-width:1100px){
             .padre .imagen{
@@ -374,21 +582,6 @@
             }
         
         }
-        .enlace3{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            position: relative;
-        }
-        .enlace3 img{
-            width: 30px;
-        }
-        .enlace3 h3{
-            font-style: italic;
-            color: rgb(79, 79, 230);
-        }
       
     </style>
 </head>
@@ -403,10 +596,8 @@
             <img class="imagen" src="astess/recursos/escritorio 4.jpg" alt="silla">
             <div class="relleno"></div>
             <div class="link">
-                
                 <img src="astess/recursos/logo de wachs app.jpg" alt="imagen1">
-                <a href="https://wa.me/584120556265">contacto WhatsApp</a>
-                
+                <a href="https://wa.me/584120556265">contacto WhatsApp</a>  
             </div>
         </div>
     </header>
@@ -457,7 +648,52 @@
                     <a href="archiveros.html">ver mas...</a>
                 </div>
             </div>
-          
+        </article>
+        <p class="titulo">silla de hogar</p>
+        <article class="sillas_hogar">
+            <div class="hogar">
+                <p>silla tolix</p>
+                <img src="astess/sillas de hogar/IMG_20250508_211742.jpg" alt="escritorio">
+                <div class="enlace1">
+                    <a href="hogar.html">ver mas...</a>
+                </div>
+            </div> 
+        </article>
+        <p class="titulo">pirámides y entantes</p>
+        <article class="piramides">
+            <div class="piramide">
+                <p>pirámides</p>
+                <img src="astess/piramides/piramide.jpg" alt="escritorio">
+                <div class="enlace1">
+                    <a href="piramides.html">ver mas...</a>
+                </div>
+            </div>
+            <div class="piramide">
+                <p>estantes</p>
+                <img src="astess/estantes metalicos/estante blanco 2.jpg" alt="archivo">
+                <div class="enlace1">
+                    <a href="estantes.html">ver mas...</a>
+                </div>
+            </div>
+        </article>
+        <p class="titulo">productos mas vendidos</p>
+        <article class="carruselimg">
+            <div class="padreimg">
+                <img  id="imagen" src="astess/ejecutiva chicago.jpg" alt="chicago">
+                <img  id="imagen2" src="astess/archivo 4 gabetas.jpg" alt="archivo 4 gabetas">
+                <img  id="imagen3" src="astess/recursos/presidencial oxford.jpg" alt="oxford">
+                <img  id="imagen4" src="astess/recursos/trendy ejecutiva.jpg" alt="trendy">
+                <img  id="imagen5" src="astess/recursos/presidencial stanford.jpg" alt="stanford">
+                <img  id="imagen6" src="astess/recursos/escritorio 4.jpg" alt="escritorio presidencial">
+                <img  id="imagen7" src="astess/estantes metalicos/estante 2.jpg" alt="estantes">
+                <img  id="imagen8" src="astess/sillas de hogar/IMG_20250508_211827.jpg" alt="silla de hogar">
+                <img id="imagen9"src="astess/recursos/silla visitante 2.jpg" alt="visitante">
+                <img  id="imagen10" src="astess/recursos/silla visitante.jpg" alt="visitante2">
+            </div>
+            <div class="padrebotom">
+                <button id="botom1" class="botom">pausar</button>
+                <button id="botom2" class="botom2">mover</button>
+            </div>
         </article>
     </section>
     <footer>
@@ -467,5 +703,45 @@
             <h2>todos los derechos reservados del autor</h2>
         </div>
     </footer>
+    <script>
+        
+        let imagen = document.getElementById("imagen")
+        let imagen2 = document.getElementById("imagen2")
+        let imagen3 = document.getElementById("imagen3")
+        let imagen4 = document.getElementById("imagen4")
+        let imagen5 = document.getElementById("imagen5")
+        let imagen6 = document.getElementById("imagen6")
+        let imagen7 = document.getElementById("imagen7")
+        let imagen8 = document.getElementById("imagen8")
+        let imagen9 = document.getElementById("imagen9")
+        let imagen10 = document.getElementById("imagen10")
+        let botom1 = document.getElementById("botom1")
+        let botom2 = document.getElementById("botom2")
+
+        botom1.addEventListener("click", function(){
+           imagen.style.animationPlayState = "paused"
+           imagen2.style.animationPlayState = "paused"
+           imagen3.style.animationPlayState = "paused"
+           imagen4.style.animationPlayState = "paused"
+           imagen5.style.animationPlayState = "paused"
+           imagen6.style.animationPlayState = "paused"
+           imagen7.style.animationPlayState = "paused"
+           imagen8.style.animationPlayState = "paused"
+           imagen9.style.animationPlayState = "paused"
+           imagen10.style.animationPlayState = "paused"
+        })
+        botom2.addEventListener("click", function(){
+           imagen.style.animationPlayState = "running"
+           imagen2.style.animationPlayState = "running"
+           imagen3.style.animationPlayState = "running"
+           imagen4.style.animationPlayState = "running"
+           imagen5.style.animationPlayState = "running"
+           imagen6.style.animationPlayState = "running"
+           imagen7.style.animationPlayState = "running"
+           imagen8.style.animationPlayState = "running"
+           imagen9.style.animationPlayState = "running"
+           imagen10.style.animationPlayState = "running"
+        })
+    </script>
 </body>
 </html>
