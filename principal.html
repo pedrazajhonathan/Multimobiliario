@@ -497,10 +497,21 @@
             position: relative;
             align-items: center;
             height: 90vh;
-
+            
         }
         /* haciendo responsis */
         @media (max-width:430px){
+            .padreimg img{
+                animation-duration: 21s;
+            }
+            @keyframes mover1{
+                from{
+                    left:  0px;
+                }
+                to{
+                    left: -2230px;
+                }
+            }
             .footer{
                 flex-direction: column;
                 align-items: center;
